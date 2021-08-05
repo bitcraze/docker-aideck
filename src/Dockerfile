@@ -56,13 +56,15 @@ RUN cd /gap_sdk/tools/nntool/; pip3 install -r requirements.txt
 RUN apt-get install -y python-pip
 RUN python -m pip install configparser
 
-#RUN /bin/bash -c "echo 'alias python = python3' >> ~/.bashrc "
 
 
 RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make all;"
 
-#RUN pip3 install tensorflow==1.15.2
-#RUN pip3 install h5py==2.10.0
+RUN pip3 install --upgrade pip
+RUN pip3 install tensorflow==1.15.2
+RUN pip3 install h5py==2.10.0
+RUN sed -i 's/required=True/ /g' /gap_sdk/tools/nntool/interpreter/commands/qtune.py
+
 
 RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make nntool"
 
