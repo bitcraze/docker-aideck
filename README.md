@@ -4,8 +4,8 @@ Docker image for building the aideck gap8 hosted on [docker hub](https://hub.doc
 
 The version tags are based on the versions for the [gap_sdk of greenwaves technologies](https://github.com/GreenWaves-Technologies/gap_sdk)
 
-Versions tag available: 3.8.1 / 3.9.1 / 4.0.0
-Latest tested version: 3.8.1
+Versions tag available: 3.8.1 / 3.9.1 / 4.0.0 / 4.8.0
+Latest tested version with [aideck examples](https://github.com/bitcraze/AIdeck_examples): 3.8.1
 
 Pull the latest version with
 ```
