@@ -1,11 +1,11 @@
 FROM ubuntu:20.04
 
 
-ENV DEBIAN_FRONTEND noninteractive 
+ENV DEBIAN_FRONTEND noninteractive
 ARG GAP_SDK_VERSION=4.8.0
 RUN echo $GAP_SDK_VERSION
 RUN test -n "$GAP_SDK_VERSION"
-RUN echo "export GAP_SDK_VERSION=${GAP_SDK_VERSION}" >> ~/.bashrc 
+RUN echo "export GAP_SDK_VERSION=${GAP_SDK_VERSION}" >> ~/.bashrc
 
 RUN apt-get update
 
@@ -69,5 +69,4 @@ RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make -f gap8/gap8.
 
 COPY freeRTOS_rules.mk /gap_sdk/rtos/freeRTOS/vendors/gwt/rules/freeRTOS_rules.mk
 
-RUN mkdir -p /module/data/
-WORKDIR /module/data/
+WORKDIR /module
