@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 
-ENV DEBIAN_FRONTEND noninteractive 
+ENV DEBIAN_FRONTEND noninteractive
 ARG GAP_SDK_VERSION=4.0.0
 RUN echo $GAP_SDK_VERSION
 RUN test -n "$GAP_SDK_VERSION"
@@ -48,8 +48,8 @@ RUN git clone https://github.com/GreenWaves-Technologies/gap_riscv_toolchain_ubu
 RUN git clone https://github.com/GreenWaves-Technologies/gap_sdk.git; cd gap_sdk; git fetch --all --tags; git checkout tags/release-v${GAP_SDK_VERSION}; git submodule update --init --recursive
 
 RUN apt-get install -y protobuf-compiler
-RUN pip3 install numpy 
-RUN cd /gap_sdk; pip3 install -r requirements.txt; pip3 install -r doc/requirements.txt 
+RUN pip3 install numpy
+RUN cd /gap_sdk; pip3 install -r requirements.txt; pip3 install -r doc/requirements.txt
 RUN cd /gap_sdk/tools/nntool/; pip3 install -r requirements.txt
 
 # These are needed since python2 is used by standard in 18.04
@@ -73,5 +73,4 @@ RUN apt-get update && apt-get install -y libopencv-dev python3-opencv
 
 RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make gap_tools"
 
-RUN mkdir -p /module/data/
-WORKDIR /module/data/
+WORKDIR /module
