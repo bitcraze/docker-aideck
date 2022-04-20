@@ -68,5 +68,6 @@ RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make -f gap8/gap8.
 RUN /bin/bash -c "cd gap_sdk/; source configs/ai_deck.sh; ls; make -f gap8/gap8.mk pmsis-bsp.build"
 
 COPY freeRTOS_rules.mk /gap_sdk/rtos/freeRTOS/vendors/gwt/rules/freeRTOS_rules.mk
+COPY flash_partition.c /gap_sdk/rtos/pmsis/pmsis_bsp/partition/flash_partition.c
 
 WORKDIR /module
