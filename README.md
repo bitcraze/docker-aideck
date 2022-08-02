@@ -17,7 +17,7 @@ or a specific version with
 docker pull bitcraze/aideck:3.9.1
 ```
 
-Note that this docker file is **without the autotiler** so please follow [these instructions](https://www.bitcraze.io/documentation/repository/AIdeck_examples/master/getting-started/docker-gap8/) in order to install it on your docker container.
+Note that this docker file is **without the autotiler** so please follow [these instructions](https://www.bitcraze.io/documentation/tutorials/getting-started-with-aideck/#setup-development-environment) in order to install it in your docker container.
 
 ## Older versions:
 
